@@ -1,29 +1,31 @@
 {
-    "folders": [
-      {
-        "name": "root",
-        "path": "../"
-      },
-      {
-        "name": "Frontend",
-        "path": "../Frontend"
-      },
-      {
-        "name": "Backend",
-        "path": "../Backend"
-      },
-    ],
-    "settings": {
-      "editor.formatOnSave": true,
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "files.exclude": {
-        "**/node_modules/**": false
-      },
-      "workbench.colorCustomizations": {
-        "activityBar.background": "#9b51e0",
-        "titleBar.activeBackground": "#fe4d00",
-        "titleBar.activeForeground": "#F4FDFB"
-      }
+  "folders": [
+    {
+      "name": "root",
+      "path": "../"
+    },
+    {
+      "name": "Frontend",
+      "path": "../Frontend"
+    },
+    {
+      "name": "Backend",
+      "path": "../Backend"
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "files.exclude": {
+      "**/node_modules/**": false
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#9b51e0",
+      "titleBar.activeBackground": "#fe4d00",
+      "titleBar.activeForeground": "#F4FDFB"
     }
   }
-  
+}
