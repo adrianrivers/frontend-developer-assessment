@@ -48,7 +48,7 @@ function App() {
 
   const renderAddTodoItemContent = () => (
     <Container>
-      <h1>Add Item Test</h1>
+      <h1>Add Item</h1>
       <Form.Group as={Row} className="mb-3" controlId="formAddTodoItem">
         <Form.Label column sm="2">
           Description
@@ -131,9 +131,9 @@ function App() {
                   Display (GET) all the current Todo Items in the below grid and display them in any order you wish
                 </li>
                 <li>
-                  Bonus points for completing the 'Mark as completed' button code for allowing users to update and mark
-                  a specific Todo Item as completed and for displaying any relevant validation errors/ messages from the
-                  API in the UI
+                  Bonus points for completing the {"'"}Mark as completed{"'"} button code for allowing users to update
+                  and mark a specific Todo Item as completed and for displaying any relevant validation errors/ messages
+                  from the API in the UI
                 </li>
                 <li>Feel free to add unit tests and refactor the component(s) as best you see fit</li>
               </ol>
