@@ -12,7 +12,7 @@ interface TodoItemInputProps {
 export default function TodoItemInput({ label, name, placeholder, wasSubmitted }: TodoItemInputProps) {
   const [value, setValue] = useState<string>('')
   const [touched, setTouched] = useState<boolean>(false)
-  const isError = wasSubmitted || touched
+  const isError = (wasSubmitted || touched) && Boolean(getFieldError(value))
   const errorMessage = getFieldError(value)
 
   return (

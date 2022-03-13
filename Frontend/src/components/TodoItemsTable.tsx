@@ -1,7 +1,8 @@
 import React from 'react'
-import { Table, Thead, Tbody, Tr, Th, Td, Box, Button, Text, HStack } from '@chakra-ui/react'
+import { Table, Thead, Tbody, Tr, Th, Td, Box, Text, HStack } from '@chakra-ui/react'
 import { TodoItem } from './TodoList'
-
+import TodoDescription from './TodoDescription'
+import TodoComplete from './TodoComplete'
 interface TodoItemsTableProps {
   todoItems: TodoItem[]
   handleMarkAsCompleted: (id: number, description: string) => void
@@ -20,21 +21,18 @@ export default function TodoItemsTable({ todoItems, handleMarkAsCompleted }: Tod
         <Tbody>
           {todoItems.reverse().map((todo: TodoItem) => {
             const { id, description, isCompleted } = todo
-
-            console.log(todo)
             return (
               <Tr key={id}>
                 <Td>
-                  <Text {...(isCompleted ? { as: 'del' } : null)}>{description}</Text>
+                  <TodoDescription description={description} isCompleted={isCompleted} />
                 </Td>
                 <Td isNumeric marginRight={8}>
-                  {!isCompleted ? (
-                    <Button colorScheme="green" color="white" onClick={() => handleMarkAsCompleted(id, description)}>
-                      Mark as completed
-                    </Button>
-                  ) : (
-                    <Text marginY={2}>Hooray, you are productive 🥳</Text>
-                  )}
+                  <TodoComplete
+                    handleMarkAsCompleted={handleMarkAsCompleted}
+                    isCompleted={isCompleted}
+                    id={id}
+                    description={description}
+                  />
                 </Td>
               </Tr>
             )
