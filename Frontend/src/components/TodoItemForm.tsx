@@ -4,10 +4,10 @@ import TodoItemInput from './TodoItemInput'
 import { getFieldError } from '../helpers/getFieldError'
 
 interface TodoItemFormProps {
-  addTodoItem: (description: FormDataEntryValue) => void
+  postTodoItem: (description: any) => Promise<void>
 }
 
-export default function TodoItemForm({ addTodoItem }: TodoItemFormProps) {
+export default function TodoItemForm({ postTodoItem }: TodoItemFormProps) {
   const [wasSubmitted, setWasSubmitted] = useState<boolean>(false)
   const form = useRef<HTMLFormElement>(null)
 
@@ -18,7 +18,7 @@ export default function TodoItemForm({ addTodoItem }: TodoItemFormProps) {
     const formIsValid = Object.values(fieldValues).every((value) => typeof value === 'string' && !getFieldError(value))
 
     if (formIsValid) {
-      addTodoItem(fieldValues.description)
+      postTodoItem(fieldValues.description)
       setWasSubmitted(true)
       form.current?.reset()
     }

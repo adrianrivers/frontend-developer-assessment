@@ -1,53 +1,57 @@
-import React, { useCallback } from 'react'
-import { Table, Thead, Tbody, Tr, Th, Td, VStack, Button, Text, HStack } from '@chakra-ui/react'
+import React from 'react'
+import { Table, Thead, Tbody, Tr, Th, Td, Box, Button, Text, HStack } from '@chakra-ui/react'
 import { TodoItem } from './TodoList'
 
 interface TodoItemsTableProps {
   todoItems: TodoItem[]
-  getAllTodoItems: () => Promise<TodoItem[] | void>
+  handleMarkAsCompleted: (id: number, description: string) => void
 }
 
-export default function TodoItemsTable({ todoItems, getAllTodoItems }: TodoItemsTableProps) {
-  const refreshGetAllTodoItems = useCallback(async () => {
-    getAllTodoItems()
-  }, [getAllTodoItems])
-
+export default function TodoItemsTable({ todoItems, handleMarkAsCompleted }: TodoItemsTableProps) {
   const table = () => {
     return (
       <Table variant="simple">
         <Thead>
           <Tr>
-            <Th>ID</Th>
             <Th>Description</Th>
             <Th isNumeric>Action</Th>
           </Tr>
         </Thead>
         <Tbody>
-          {todoItems.map((item: TodoItem) => (
-            <Tr key={item.id}>
-              <Td color="gray.500">{item.id}</Td>
-              <Td>{item.description}</Td>
-              <Td isNumeric marginRight={8}>
-                <Button colorScheme="green" color="white">
-                  Mark as completed
-                </Button>
-              </Td>
-            </Tr>
-          ))}
+          {todoItems.reverse().map((todo: TodoItem) => {
+            const { id, description, isCompleted } = todo
+
+            console.log(todo)
+            return (
+              <Tr key={id}>
+                <Td>
+                  <Text {...(isCompleted ? { as: 'del' } : null)}>{description}</Text>
+                </Td>
+                <Td isNumeric marginRight={8}>
+                  {!isCompleted ? (
+                    <Button colorScheme="green" color="white" onClick={() => handleMarkAsCompleted(id, description)}>
+                      Mark as completed
+                    </Button>
+                  ) : (
+                    <Text marginY={2}>Hooray, you are productive 🥳</Text>
+                  )}
+                </Td>
+              </Tr>
+            )
+          })}
         </Tbody>
       </Table>
     )
   }
 
-  const noItemsToDisplay = () => <Text>You currently have no todo items in your todo list 🙂</Text>
-
   return (
     <>
       <HStack paddingX={6} marginBottom={12} justifyContent="space-between">
         <Text fontWeight="bold">Showing {todoItems.length} Item(s) </Text>
-        <Button onClick={refreshGetAllTodoItems}>Refresh</Button>
       </HStack>
-      <VStack marginBottom={16}>{todoItems.length ? table() : noItemsToDisplay()}</VStack>
+      <Box marginBottom={16}>
+        {todoItems.length ? table() : <Text marginX={6}>You currently have no todo items in your todo list 🙂</Text>}
+      </Box>
     </>
   )
 }

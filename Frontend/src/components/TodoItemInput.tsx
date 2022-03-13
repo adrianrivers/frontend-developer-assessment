@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { VStack, Input, FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react'
+import { Input, FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react'
 import { getFieldError } from '../helpers/getFieldError'
 
 interface TodoItemInputProps {

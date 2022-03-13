@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from '@chakra-ui/react'
 import TodoItemsTable from './TodoItemsTable'
 import TodoItemForm from './TodoItemForm'
@@ -15,40 +15,52 @@ export interface TodoItem {
 export default function TodoList() {
   const [todoItems, setTodoItems] = useState<TodoItem[]>([])
 
-  // const [firstResponse, secondResponse] = await Promise.all([
-  //   axios.get(`https://maps.googleapis.com/maps/api/geocode/json?&address=${this.props.p1}`),
-  //   axios.get(`https://maps.googleapis.com/maps/api/geocode/json?&address=${this.props.p2}`)
-  // ]);
-
-  async function addTodoItem(description: FormDataEntryValue) {
+  async function getAllTodoItems(): Promise<void> {
     try {
-      axios.post(`${TODOLIST_API_BASE_URL}/api/todoItems`, {
-        description,
-        isCompleted: false,
-      })
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  async function getAllTodoItems(): Promise<TodoItem[] | void> {
-    try {
-      const data = await axios
-        .get<TodoItem[]>(`${TODOLIST_API_BASE_URL}/api/todoItems`)
-        .then((response) => response.data)
+      const { data } = await axios.get<TodoItem[]>(`${TODOLIST_API_BASE_URL}/api/todoItems`)
 
       if (data.length) {
-        setTodoItems(data.reverse())
+        return setTodoItems(data.reverse())
       }
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
+
+  async function postTodoItem(description: string) {
+    try {
+      const { status } = await axios.post(`${TODOLIST_API_BASE_URL}/api/todoItems`, { description, isCompleted: false })
+
+      if (status === 201) {
+        getAllTodoItems().then((data) => data)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async function handleMarkAsCompleted(id: number, description: string): Promise<void> {
+    try {
+      console.log(id)
+      const { status } = await axios.put(`${TODOLIST_API_BASE_URL}/api/todoItems/${id}`, {
+        description,
+        isCompleted: true,
+      })
+
+      if (status === 200) getAllTodoItems()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    getAllTodoItems()
+  }, [])
 
   return (
     <Container as="main" maxWidth="container.lg">
-      <TodoItemForm addTodoItem={addTodoItem} />
-      <TodoItemsTable todoItems={todoItems} getAllTodoItems={getAllTodoItems} />
+      <TodoItemForm postTodoItem={postTodoItem} />
+      <TodoItemsTable todoItems={todoItems} handleMarkAsCompleted={handleMarkAsCompleted} />
     </Container>
   )
 }
