@@ -10,7 +10,18 @@ interface TodoCompleteProps {
 
 export default function TodoComplete({ handleMarkAsCompleted, isCompleted, id, description }: TodoCompleteProps) {
   return !isCompleted ? (
-    <Button colorScheme="green" color="white" onClick={() => handleMarkAsCompleted(id, description)}>
+    <Button
+      background="brand.vividOrange"
+      borderRadius={0}
+      border="1px solid transparent"
+      _hover={{
+        background: 'transparent',
+        color: 'brand.vividOrange',
+        borderColor: 'brand.vividOrange',
+      }}
+      color="white"
+      onClick={() => handleMarkAsCompleted(id, description)}
+    >
       Mark as completed
     </Button>
   ) : (

@@ -34,7 +34,20 @@ export default function TodoItemForm({ postTodoItem }: TodoItemFormProps) {
             placeholder="Description..."
             wasSubmitted={wasSubmitted}
           />
-          <Button type="submit">Add item</Button>
+          <Button
+            type="submit"
+            color="white"
+            background="brand.vividOrange"
+            borderRadius={0}
+            border="1px solid transparent"
+            _hover={{
+              background: 'transparent',
+              color: 'brand.vividOrange',
+              borderColor: 'brand.vividOrange',
+            }}
+          >
+            Add item
+          </Button>
         </HStack>
       </form>
     </Box>

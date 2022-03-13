@@ -8,9 +8,9 @@ interface TodoDescriptionProps {
 
 export default function TodoDescription({ description, isCompleted }: TodoDescriptionProps) {
   const strikethrough = keyframes`
-        from { width: 0; }
-        to { width: calc(100% + 1em); }
-    `
+    from { width: 0; }
+    to { width: calc(100% + 1em); }
+  `
 
   return !isCompleted ? (
     <Text>{description}</Text>
@@ -21,7 +21,7 @@ export default function TodoDescription({ description, isCompleted }: TodoDescri
         position="relative"
         _after={{
           content: '""',
-          background: 'red',
+          background: 'brand.vividOrange',
           position: 'absolute',
           width: 'calc(100% + 1em)',
           height: '2px',

@@ -30,10 +30,11 @@ export default function TodoItemInput({ label, name, placeholder, wasSubmitted }
         pattern="[a-z]{3,10}"
         required
         aria-describedby={isError ? `${name}-error` : undefined}
-        focusBorderColor="lime"
+        focusBorderColor="brand.vividRed"
+        borderRadius="0"
       />
       {isError ? (
-        <FormErrorMessage position="absolute" bottom="-6">
+        <FormErrorMessage position="absolute" bottom="-6" color="brand.vividRed">
           {errorMessage}
         </FormErrorMessage>
       ) : null}
