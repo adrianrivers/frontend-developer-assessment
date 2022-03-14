@@ -75,15 +75,19 @@ export default function TodoList(): React.ReactElement {
     }
   }, [responseError])
 
-  console.log(responseError)
-
   return (
-    <Container as="main" maxWidth="container.lg">
+    <>
       {showConfetti && (
         <Confetti colors={confettiColors} recycle={false} onConfettiComplete={() => setShowConfetti(false)} />
       )}
-      <TodoItemForm postTodoItem={postTodoItem} clearResponseError={clearResponseError} responseError={responseError} />
-      <TodoItemsTable todoItems={todoItems} handleMarkAsCompleted={putTodoItemMarkAsCompleted} />
-    </Container>
+      <Container as="main" maxWidth="container.lg">
+        <TodoItemForm
+          postTodoItem={postTodoItem}
+          clearResponseError={clearResponseError}
+          responseError={responseError}
+        />
+        <TodoItemsTable todoItems={todoItems} handleMarkAsCompleted={putTodoItemMarkAsCompleted} />
+      </Container>
+    </>
   )
 }
