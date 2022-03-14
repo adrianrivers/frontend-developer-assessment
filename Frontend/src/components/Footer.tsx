@@ -6,7 +6,10 @@ export default function Footer(): JSX.Element {
     <Box as="footer" width="full">
       <Center paddingY={16}>
         <Text>
-          © 2022 Copyright <Link href="https://clearpoint.digital">clearpoint.digital</Link>
+          © 2022 Copyright{' '}
+          <Link color="brand.vividOrange" href="https://clearpoint.digital">
+            clearpoint.digital
+          </Link>
         </Text>
       </Center>
     </Box>

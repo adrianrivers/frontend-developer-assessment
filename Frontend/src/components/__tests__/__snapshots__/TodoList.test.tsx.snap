@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList should NOT render a table containing todo items if none returned in response 1`] = `
+<div>
+  <main
+    class="chakra-container css-f91va8"
+  >
+    <div
+      class="css-1mpmkp5"
+    >
+      <form
+        novalidate=""
+      >
+        <div
+          class="chakra-stack css-1oeb4ru"
+        >
+          <div
+            class="chakra-form-control css-79elbk"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-8l9e57"
+              for="field-1"
+              id="field-1-label"
+            >
+              Add todo item
+              :
+            </label>
+            <input
+              aria-required="true"
+              class="chakra-input css-o1iu6e"
+              id="description-input"
+              name="description"
+              pattern="[a-z]{3,10}"
+              placeholder="Description..."
+              required=""
+              type="text"
+            />
+          </div>
+          <button
+            class="chakra-button css-18f4awl"
+            type="submit"
+          >
+            Add item
+          </button>
+        </div>
+      </form>
+    </div>
+    <div
+      class="chakra-stack css-1eoh7ji"
+    >
+      <p
+        class="chakra-text css-in3yi3"
+      >
+        Showing 
+        0
+         Item(s)
+      </p>
+    </div>
+    <div
+      class="css-1qm1lh"
+    >
+      <p
+        class="chakra-text css-1xsyj6s"
+      >
+        You currently have no todo items in your todo list 🙂
+      </p>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`TodoList should render a table containing todo items if todo items are returned in response 1`] = `
+<div>
+  <main
+    class="chakra-container css-f91va8"
+  >
+    <div
+      class="css-1mpmkp5"
+    >
+      <form
+        novalidate=""
+      >
+        <div
+          class="chakra-stack css-1oeb4ru"
+        >
+          <div
+            class="chakra-form-control css-79elbk"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-8l9e57"
+              for="field-2"
+              id="field-2-label"
+            >
+              Add todo item
+              :
+            </label>
+            <input
+              aria-required="true"
+              class="chakra-input css-o1iu6e"
+              id="description-input"
+              name="description"
+              pattern="[a-z]{3,10}"
+              placeholder="Description..."
+              required=""
+              type="text"
+            />
+          </div>
+          <button
+            class="chakra-button css-18f4awl"
+            type="submit"
+          >
+            Add item
+          </button>
+        </div>
+      </form>
+    </div>
+    <div
+      class="chakra-stack css-1eoh7ji"
+    >
+      <p
+        class="chakra-text css-in3yi3"
+      >
+        Showing 
+        2
+         Item(s)
+      </p>
+    </div>
+    <div
+      class="css-1qm1lh"
+    >
+      <table
+        class="chakra-table css-0"
+        role="table"
+      >
+        <thead
+          class="css-0"
+        >
+          <tr
+            class="css-0"
+            role="row"
+          >
+            <th
+              class="css-0"
+            >
+              Description
+            </th>
+            <th
+              class="css-0"
+              data-is-numeric="true"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="css-0"
+        >
+          <tr
+            class="css-0"
+            role="row"
+          >
+            <td
+              class="css-0"
+              role="gridcell"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Buy milk
+              </p>
+            </td>
+            <td
+              class="css-12z0wuy"
+              data-is-numeric="true"
+              role="gridcell"
+            >
+              <button
+                class="chakra-button css-16jemn4"
+                type="button"
+              >
+                Mark as completed
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+            role="row"
+          >
+            <td
+              class="css-0"
+              role="gridcell"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Buy cheese
+              </p>
+            </td>
+            <td
+              class="css-12z0wuy"
+              data-is-numeric="true"
+              role="gridcell"
+            >
+              <button
+                class="chakra-button css-16jemn4"
+                type="button"
+              >
+                Mark as completed
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`TodoList should update the table to contain a newly posted todo item 1`] = `
+<div>
+  <main
+    class="chakra-container css-f91va8"
+  >
+    <div
+      class="css-1mpmkp5"
+    >
+      <form
+        novalidate=""
+      >
+        <div
+          class="chakra-stack css-1oeb4ru"
+        >
+          <div
+            class="chakra-form-control css-79elbk"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-8l9e57"
+              for="field-3"
+              id="field-3-label"
+            >
+              Add todo item
+              :
+            </label>
+            <input
+              aria-required="true"
+              class="chakra-input css-o1iu6e"
+              id="description-input"
+              name="description"
+              pattern="[a-z]{3,10}"
+              placeholder="Description..."
+              required=""
+              type="text"
+            />
+          </div>
+          <button
+            class="chakra-button css-18f4awl"
+            type="submit"
+          >
+            Add item
+          </button>
+        </div>
+      </form>
+    </div>
+    <div
+      class="chakra-stack css-1eoh7ji"
+    >
+      <p
+        class="chakra-text css-in3yi3"
+      >
+        Showing 
+        2
+         Item(s)
+      </p>
+    </div>
+    <div
+      class="css-1qm1lh"
+    >
+      <table
+        class="chakra-table css-0"
+        role="table"
+      >
+        <thead
+          class="css-0"
+        >
+          <tr
+            class="css-0"
+            role="row"
+          >
+            <th
+              class="css-0"
+            >
+              Description
+            </th>
+            <th
+              class="css-0"
+              data-is-numeric="true"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="css-0"
+        >
+          <tr
+            class="css-0"
+            role="row"
+          >
+            <td
+              class="css-0"
+              role="gridcell"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Buy milk
+              </p>
+            </td>
+            <td
+              class="css-12z0wuy"
+              data-is-numeric="true"
+              role="gridcell"
+            >
+              <button
+                class="chakra-button css-16jemn4"
+                type="button"
+              >
+                Mark as completed
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+            role="row"
+          >
+            <td
+              class="css-0"
+              role="gridcell"
+            >
+              <p
+                class="chakra-text css-0"
+              >
+                Buy cheese
+              </p>
+            </td>
+            <td
+              class="css-12z0wuy"
+              data-is-numeric="true"
+              role="gridcell"
+            >
+              <button
+                class="chakra-button css-16jemn4"
+                type="button"
+              >
+                Mark as completed
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+`;

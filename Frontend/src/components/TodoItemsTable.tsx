@@ -6,7 +6,7 @@ import TodoComplete from './TodoComplete'
 
 interface TodoItemsTableProps {
   todoItems: TodoItem[]
-  handleMarkAsCompleted: (id: number, description: string) => void
+  handleMarkAsCompleted: (id: string, description: string) => void
 }
 
 export default function TodoItemsTable({ todoItems, handleMarkAsCompleted }: TodoItemsTableProps): React.ReactElement {
@@ -46,7 +46,7 @@ export default function TodoItemsTable({ todoItems, handleMarkAsCompleted }: Tod
   return (
     <>
       <HStack paddingX={6} marginBottom={12} justifyContent="space-between">
-        <Text fontWeight="bold">Showing {todoItems.length} Item(s) </Text>
+        <Text fontWeight="bold">Showing {todoItems.length} Item(s)</Text>
       </HStack>
       <Box marginBottom={16}>
         {todoItems.length ? table() : <Text marginX={6}>You currently have no todo items in your todo list 🙂</Text>}

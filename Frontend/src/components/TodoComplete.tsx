@@ -2,9 +2,9 @@ import React from 'react'
 import { Button, Text, ScaleFade } from '@chakra-ui/react'
 
 interface TodoCompleteProps {
-  handleMarkAsCompleted: (id: number, description: string) => void
+  handleMarkAsCompleted: (id: string, description: string) => void
   isCompleted: boolean
-  id: number
+  id: string
   description: string
 }
 

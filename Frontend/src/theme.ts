@@ -18,6 +18,8 @@ const theme = extendTheme({
     brand: {
       vividOrange: '#ff6900',
       vividRed: '#cf2e2e',
+      vividPurple: '#9b51e0',
+      vividGreen: '#00d084',
     },
   },
 })

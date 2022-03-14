@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Input, FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react'
-import { getFieldError } from '../helpers/getFieldError'
+import { getFieldError, getResponseError } from '../helpers/formValidation'
 
 interface TodoItemInputProps {
   label: string
   name: string
   placeholder: string
   wasSubmitted: boolean
+  responseError: string
+  clearResponseError: () => void
 }
 
 export default function TodoItemInput({
@@ -14,11 +16,14 @@ export default function TodoItemInput({
   name,
   placeholder,
   wasSubmitted,
+  responseError,
+  clearResponseError,
 }: TodoItemInputProps): React.ReactElement {
   const [value, setValue] = useState<string>('')
   const [touched, setTouched] = useState<boolean>(false)
-  const isError = (wasSubmitted || touched) && Boolean(getFieldError(value))
-  const errorMessage = getFieldError(value)
+  const isError =
+    ((wasSubmitted || touched) && Boolean(getFieldError(value))) || Boolean(getResponseError(responseError))
+  const errorMessage = getFieldError(value) || getResponseError(responseError)
 
   return (
     <FormControl isInvalid={isError} position="relative">
@@ -30,7 +35,9 @@ export default function TodoItemInput({
         name={name}
         type="text"
         placeholder={placeholder}
-        onChange={(event) => setValue(event.currentTarget.value)}
+        onChange={(event) => {
+          setValue(event.currentTarget.value), clearResponseError()
+        }}
         onBlur={() => setTouched(true)}
         pattern="[a-z]{3,10}"
         required
