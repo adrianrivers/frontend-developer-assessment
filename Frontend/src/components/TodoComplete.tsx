@@ -1,19 +1,24 @@
 import React from 'react'
 import { Button, Text, ScaleFade, Box } from '@chakra-ui/react'
+import { TodoItem } from './TodoList'
+import axios from 'axios'
+import { TODO_LIST_API } from '../constants'
+import { useSWRConfig } from 'swr'
 
-interface TodoCompleteProps {
-  handleMarkAsCompleted: (id: string, description: string) => void
-  isCompleted: boolean
-  id: string
-  description: string
-}
+export default function TodoComplete({ isCompleted, id, description }: TodoItem): React.ReactElement {
+  const { mutate } = useSWRConfig()
 
-export default function TodoComplete({
-  handleMarkAsCompleted,
-  isCompleted,
-  id,
-  description,
-}: TodoCompleteProps): React.ReactElement {
+  const handleMarkAsCompleted = async (id: string, description: string) => {
+    try {
+      const { status } = await axios.put(`${TODO_LIST_API.DEV_URL}/${id}`, { description, isCompleted: true })
+      if (status === 200) {
+        mutate(TODO_LIST_API.DEV_URL)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return !isCompleted ? (
     <Button
       background="brand.vividOrange"

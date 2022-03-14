@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, FormControl, FormLabel, FormErrorMessage, Box } from '@chakra-ui/react'
+import { Input, FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react'
 import { getFieldError, getResponseError } from '../helpers/formValidation'
 
 interface TodoItemInputProps {
@@ -25,6 +25,11 @@ export default function TodoItemInput({
     ((wasSubmitted || touched) && Boolean(getFieldError(value))) || Boolean(getResponseError(responseError))
   const errorMessage = getFieldError(value) || getResponseError(responseError)
 
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setValue(event.currentTarget.value)
+    clearResponseError()
+  }
+
   return (
     <FormControl isInvalid={isError}>
       <FormLabel position="absolute" top="-8">
@@ -35,9 +40,7 @@ export default function TodoItemInput({
         name={name}
         type="text"
         placeholder={placeholder}
-        onChange={(event) => {
-          setValue(event.currentTarget.value), clearResponseError()
-        }}
+        onChange={handleOnChange}
         onBlur={() => setTouched(true)}
         pattern="[a-z]{3,10}"
         required
