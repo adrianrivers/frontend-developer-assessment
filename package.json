@@ -7,6 +7,8 @@
   "scripts": {
     "frontend": "yarn workspace todolist.api dev",
     "backend": "yarn workspace todolist.app dev",
+    "test:frontend": "yarn workspace todolist.app test",
+    "test:backend": "yarn workspace todolist.api test",
     "dev": "concurrently --kill-others-on-fail 'yarn backend'  'yarn frontend'"
   },
   "dependencies": {
