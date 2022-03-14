@@ -6,7 +6,7 @@ exports[`TodoList should NOT render a table containing todo items if none return
     class="chakra-container css-f91va8"
   >
     <div
-      class="css-1mpmkp5"
+      class="css-8rg8va"
     >
       <form
         novalidate=""
@@ -15,7 +15,7 @@ exports[`TodoList should NOT render a table containing todo items if none return
           class="chakra-stack css-1oeb4ru"
         >
           <div
-            class="chakra-form-control css-79elbk"
+            class="chakra-form-control css-0"
             role="group"
           >
             <label
@@ -76,7 +76,7 @@ exports[`TodoList should render a table containing todo items if todo items are 
     class="chakra-container css-f91va8"
   >
     <div
-      class="css-1mpmkp5"
+      class="css-8rg8va"
     >
       <form
         novalidate=""
@@ -85,7 +85,7 @@ exports[`TodoList should render a table containing todo items if todo items are 
           class="chakra-stack css-1oeb4ru"
         >
           <div
-            class="chakra-form-control css-79elbk"
+            class="chakra-form-control css-0"
             role="group"
           >
             <label
@@ -224,7 +224,7 @@ exports[`TodoList should update the table to contain a newly posted todo item 1`
     class="chakra-container css-f91va8"
   >
     <div
-      class="css-1mpmkp5"
+      class="css-8rg8va"
     >
       <form
         novalidate=""
@@ -233,7 +233,7 @@ exports[`TodoList should update the table to contain a newly posted todo item 1`
           class="chakra-stack css-1oeb4ru"
         >
           <div
-            class="chakra-form-control css-79elbk"
+            class="chakra-form-control css-0"
             role="group"
           >
             <label

@@ -10,7 +10,7 @@ exports[`TodoItemsTable should NOT render a table of todo items if none are pass
     >
       Showing 
       0
-       Item(s) 
+       Item(s)
     </p>
   </div>
   <div
@@ -35,7 +35,7 @@ exports[`TodoItemsTable should render a TodoItemsTable component 1`] = `
     >
       Showing 
       2
-       Item(s) 
+       Item(s)
     </p>
   </div>
   <div

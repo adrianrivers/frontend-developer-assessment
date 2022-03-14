@@ -11,9 +11,10 @@ exports[`Footer should render a Footer component 1`] = `
       <p
         class="chakra-text css-0"
       >
-        © 2022 Copyright 
+        © 2022 Copyright
+         
         <a
-          class="chakra-link css-0"
+          class="chakra-link css-1odtcgn"
           href="https://clearpoint.digital"
         >
           clearpoint.digital
