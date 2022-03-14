@@ -4,7 +4,7 @@ import TodoItemInput from './TodoItemInput'
 import { getFieldError } from '../helpers/getFieldError'
 
 interface TodoItemFormProps {
-  postTodoItem: (description: any) => Promise<void>
+  postTodoItem: (description: string | FormDataEntryValue) => void
 }
 
 export default function TodoItemForm({ postTodoItem }: TodoItemFormProps) {

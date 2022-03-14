@@ -4,7 +4,7 @@ import TodoItemsTable from './TodoItemsTable'
 import TodoItemForm from './TodoItemForm'
 import axios from 'axios'
 
-const TODOLIST_API_BASE_URL = 'http://localhost:7000'
+const TODOLIST_API = 'http://localhost:7000/api/todoItems'
 
 export interface TodoItem {
   id: number
@@ -12,40 +12,32 @@ export interface TodoItem {
   isCompleted: boolean
 }
 
-export default function TodoList() {
+export default function TodoList(): React.ReactElement {
   const [todoItems, setTodoItems] = useState<TodoItem[]>([])
 
-  async function getAllTodoItems(): Promise<void> {
+  const getAllTodoItems = async (): Promise<void> => {
     try {
-      const { data } = await axios.get<TodoItem[]>(`${TODOLIST_API_BASE_URL}/api/todoItems`)
+      const { data } = await axios.get<TodoItem[]>(TODOLIST_API)
 
-      if (data.length) {
-        return setTodoItems(data.reverse())
-      }
+      if (data.length) return setTodoItems(data.reverse())
     } catch (error) {
       console.error(error)
     }
   }
 
-  async function postTodoItem(description: string) {
+  const postTodoItem = async (description: string | FormDataEntryValue): Promise<void> => {
     try {
-      const { status } = await axios.post(`${TODOLIST_API_BASE_URL}/api/todoItems`, { description, isCompleted: false })
+      const { status } = await axios.post(TODOLIST_API, { description, isCompleted: false })
 
-      if (status === 201) {
-        getAllTodoItems().then((data) => data)
-      }
+      if (status === 201) getAllTodoItems().then((data) => data)
     } catch (error) {
       console.error(error)
     }
   }
 
-  async function handleMarkAsCompleted(id: number, description: string): Promise<void> {
+  const putTodoItemMarkAsCompleted = async (id: number, description: string) => {
     try {
-      console.log(id)
-      const { status } = await axios.put(`${TODOLIST_API_BASE_URL}/api/todoItems/${id}`, {
-        description,
-        isCompleted: true,
-      })
+      const { status } = await axios.put(`${TODOLIST_API}/${id}`, { description, isCompleted: true })
 
       if (status === 200) getAllTodoItems()
     } catch (error) {
@@ -60,7 +52,7 @@ export default function TodoList() {
   return (
     <Container as="main" maxWidth="container.lg">
       <TodoItemForm postTodoItem={postTodoItem} />
-      <TodoItemsTable todoItems={todoItems} handleMarkAsCompleted={handleMarkAsCompleted} />
+      <TodoItemsTable todoItems={todoItems} handleMarkAsCompleted={putTodoItemMarkAsCompleted} />
     </Container>
   )
 }

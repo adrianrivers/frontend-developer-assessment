@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render a Header component 1`] = `
+<div>
+  <header
+    class="chakra-container css-0"
+  >
+    <div
+      class="css-1texwty"
+    >
+      <div
+        class="css-gmuwbf"
+      >
+        <a
+          class="chakra-link css-0"
+          href="https://clearpoint.digital"
+          target="_blank"
+        >
+          <img
+            class="chakra-image css-1domaf0"
+            src="/clearPointLogo.png"
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+</div>
+`;

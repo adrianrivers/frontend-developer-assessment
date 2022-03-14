@@ -2,16 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-
-const theme = extendTheme({
-  colors: {
-    brand: {
-      vividOrange: '#ff6900',
-      vividRed: '#cf2e2e',
-    },
-  },
-})
+import { ChakraProvider } from '@chakra-ui/react'
+import theme from '../theme'
 
 ReactDOM.render(
   <React.StrictMode>

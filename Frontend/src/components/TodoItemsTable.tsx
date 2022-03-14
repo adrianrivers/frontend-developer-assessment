@@ -3,6 +3,7 @@ import { Table, Thead, Tbody, Tr, Th, Td, Box, Text, HStack } from '@chakra-ui/r
 import { TodoItem } from './TodoList'
 import TodoDescription from './TodoDescription'
 import TodoComplete from './TodoComplete'
+
 interface TodoItemsTableProps {
   todoItems: TodoItem[]
   handleMarkAsCompleted: (id: number, description: string) => void

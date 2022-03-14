@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItemsTable should NOT render a table of todo items if none are passed to the component 1`] = `
+<div>
+  <div
+    class="chakra-stack css-1eoh7ji"
+  >
+    <p
+      class="chakra-text css-in3yi3"
+    >
+      Showing 
+      0
+       Item(s) 
+    </p>
+  </div>
+  <div
+    class="css-1qm1lh"
+  >
+    <p
+      class="chakra-text css-1xsyj6s"
+    >
+      You currently have no todo items in your todo list 🙂
+    </p>
+  </div>
+</div>
+`;
+
+exports[`TodoItemsTable should render a TodoItemsTable component 1`] = `
+<div>
+  <div
+    class="chakra-stack css-1eoh7ji"
+  >
+    <p
+      class="chakra-text css-in3yi3"
+    >
+      Showing 
+      2
+       Item(s) 
+    </p>
+  </div>
+  <div
+    class="css-1qm1lh"
+  >
+    <table
+      class="chakra-table css-0"
+      role="table"
+    >
+      <thead
+        class="css-0"
+      >
+        <tr
+          class="css-0"
+          role="row"
+        >
+          <th
+            class="css-0"
+          >
+            Description
+          </th>
+          <th
+            class="css-0"
+            data-is-numeric="true"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="css-0"
+      >
+        <tr
+          class="css-0"
+          role="row"
+        >
+          <td
+            class="css-0"
+            role="gridcell"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Buy cheese
+            </p>
+          </td>
+          <td
+            class="css-12z0wuy"
+            data-is-numeric="true"
+            role="gridcell"
+          >
+            <button
+              class="chakra-button css-16jemn4"
+              type="button"
+            >
+              Mark as completed
+            </button>
+          </td>
+        </tr>
+        <tr
+          class="css-0"
+          role="row"
+        >
+          <td
+            class="css-0"
+            role="gridcell"
+          >
+            <p
+              class="chakra-text css-0"
+            >
+              Buy milk
+            </p>
+          </td>
+          <td
+            class="css-12z0wuy"
+            data-is-numeric="true"
+            role="gridcell"
+          >
+            <button
+              class="chakra-button css-16jemn4"
+              type="button"
+            >
+              Mark as completed
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

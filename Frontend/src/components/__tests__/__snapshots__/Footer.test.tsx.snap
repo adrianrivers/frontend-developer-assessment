@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render a Footer component 1`] = `
+<div>
+  <footer
+    class="css-13rbvqk"
+  >
+    <div
+      class="css-caen9j"
+    >
+      <p
+        class="chakra-text css-0"
+      >
+        © 2022 Copyright 
+        <a
+          class="chakra-link css-0"
+          href="https://clearpoint.digital"
+        >
+          clearpoint.digital
+        </a>
+      </p>
+    </div>
+  </footer>
+</div>
+`;
