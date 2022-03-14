@@ -1,4 +1,4 @@
-export function getFieldError(value: string | undefined): string | null {
+export function getFieldError(value: string | undefined): string {
   if (!value) return 'Field is required'
 
   const valueIsLongEnough = value.length >= 3
@@ -10,19 +10,19 @@ export function getFieldError(value: string | undefined): string | null {
     return 'Value must be no longer than 100 characters 🛑'
   }
 
-  return null
+  return ''
 }
 
 const responseErrorMessageMap: { [responseError: string]: string } = Object.freeze({
-  'description already exists': "Don't use the same description twice 🚨",
+  'description already exists': "That todo item already exists, don't enter the same todo item more than once 🚨",
 })
 
-export function getResponseError(responseError: string): string | null {
+export function getResponseError(responseError: string): string {
   const sanitisedResponseError = responseError.toLocaleLowerCase()
 
   if (responseErrorMessageMap[sanitisedResponseError]) {
     return responseErrorMessageMap[sanitisedResponseError]
   }
 
-  return null
+  return ''
 }

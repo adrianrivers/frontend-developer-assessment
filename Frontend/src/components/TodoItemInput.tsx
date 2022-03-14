@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react'
+import { Input, FormControl, FormLabel, FormErrorMessage, Box } from '@chakra-ui/react'
 import { getFieldError, getResponseError } from '../helpers/formValidation'
 
 interface TodoItemInputProps {
@@ -26,7 +26,7 @@ export default function TodoItemInput({
   const errorMessage = getFieldError(value) || getResponseError(responseError)
 
   return (
-    <FormControl isInvalid={isError} position="relative">
+    <FormControl isInvalid={isError}>
       <FormLabel position="absolute" top="-8">
         {label}:
       </FormLabel>
@@ -46,7 +46,7 @@ export default function TodoItemInput({
         borderRadius="0"
       />
       {isError ? (
-        <FormErrorMessage position="absolute" bottom="-6" color="brand.vividRed">
+        <FormErrorMessage position="absolute" top={12} color="brand.vividRed">
           {errorMessage}
         </FormErrorMessage>
       ) : null}

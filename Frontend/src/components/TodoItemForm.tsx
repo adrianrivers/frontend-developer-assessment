@@ -33,7 +33,7 @@ export default function TodoItemForm({
   }
 
   return (
-    <Box marginBottom={16} paddingX={6}>
+    <Box marginBottom={20} paddingX={6}>
       <form noValidate onSubmit={handleSubmit} ref={form}>
         <HStack justifyContent="space-between">
           <TodoItemInput
