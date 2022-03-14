@@ -3,17 +3,6 @@
 exports[`TodoItemsTable should NOT render a table of todo items if none are passed to the component 1`] = `
 <div>
   <div
-    class="chakra-stack css-1eoh7ji"
-  >
-    <p
-      class="chakra-text css-in3yi3"
-    >
-      Showing 
-      0
-       Item(s)
-    </p>
-  </div>
-  <div
     class="css-1qm1lh"
   >
     <p
@@ -28,19 +17,19 @@ exports[`TodoItemsTable should NOT render a table of todo items if none are pass
 exports[`TodoItemsTable should render a TodoItemsTable component 1`] = `
 <div>
   <div
-    class="chakra-stack css-1eoh7ji"
-  >
-    <p
-      class="chakra-text css-in3yi3"
-    >
-      Showing 
-      2
-       Item(s)
-    </p>
-  </div>
-  <div
     class="css-1qm1lh"
   >
+    <div
+      class="chakra-stack css-1eoh7ji"
+    >
+      <p
+        class="chakra-text css-in3yi3"
+      >
+        Showing 
+        2
+         Item(s)
+      </p>
+    </div>
     <table
       class="chakra-table css-0"
       role="table"
@@ -79,7 +68,11 @@ exports[`TodoItemsTable should render a TodoItemsTable component 1`] = `
             <p
               class="chakra-text css-0"
             >
-              Buy cheese
+              <span
+                class="css-f9z4im"
+              >
+                Pay bills
+              </span>
             </p>
           </td>
           <td
@@ -87,12 +80,20 @@ exports[`TodoItemsTable should render a TodoItemsTable component 1`] = `
             data-is-numeric="true"
             role="gridcell"
           >
-            <button
-              class="chakra-button css-16jemn4"
-              type="button"
+            <div
+              class="chakra-offset-slide"
+              style="opacity: 0; transform: scale(0.95) translateZ(0);"
             >
-              Mark as completed
-            </button>
+              <span
+                class="css-gsgy48"
+              >
+                <p
+                  class="chakra-text css-0"
+                >
+                  Woohoo 🥳
+                </p>
+              </span>
+            </div>
           </td>
         </tr>
         <tr
