@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Text, ScaleFade } from '@chakra-ui/react'
+import { Button, Text, ScaleFade, Box } from '@chakra-ui/react'
 
 interface TodoCompleteProps {
   handleMarkAsCompleted: (id: string, description: string) => void
@@ -31,7 +31,9 @@ export default function TodoComplete({
     </Button>
   ) : (
     <ScaleFade in={isCompleted}>
-      <Text marginY={2}>Woohoo 🥳</Text>
+      <Box as="span" height="40px" display="flex" justifyContent="flex-end" alignItems="center">
+        <Text>Woohoo 🥳</Text>
+      </Box>
     </ScaleFade>
   )
 }
