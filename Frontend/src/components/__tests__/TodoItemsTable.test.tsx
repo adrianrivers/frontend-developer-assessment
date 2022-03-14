@@ -39,7 +39,7 @@ describe('TodoItemsTable', () => {
 
     waitFor(() => {
       expect(queryByText(TodoItemsMock[0].description)).toBe(null)
-      expect(getByText('Hooray, you are productive', { exact: false })).toBeInTheDocument()
+      expect(getByText('Woohoo', { exact: false })).toBeInTheDocument()
     })
 
     expect(handleMarkAsCompletedMock).toHaveBeenCalledTimes(1)

@@ -31,7 +31,7 @@ export default function TodoComplete({
     </Button>
   ) : (
     <ScaleFade in={isCompleted}>
-      <Text marginY={2}>Hooray, you are productive 🥳</Text>
+      <Text marginY={2}>Woohoo 🥳</Text>
     </ScaleFade>
   )
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container } from '@chakra-ui/react'
 import TodoItemsTable from './TodoItemsTable'
 import TodoItemForm from './TodoItemForm'
+import Confetti from 'react-confetti'
 import axios from 'axios'
 
 const TODOLIST_API = 'http://localhost:7000/api/todoItems'
@@ -13,6 +14,7 @@ export interface TodoItem {
 }
 
 export default function TodoList(): React.ReactElement {
+  const [showConfetti, setShowConfetti] = useState<boolean>(false)
   const [todoItems, setTodoItems] = useState<TodoItem[]>([])
 
   const getAllTodoItems = async (): Promise<void | undefined> => {
@@ -43,11 +45,26 @@ export default function TodoList(): React.ReactElement {
   }
 
   useEffect(() => {
+    const completedTodoItems = todoItems.filter((todoItem) => todoItem.isCompleted)
+
+    if (completedTodoItems.length === todoItems.length) {
+      setShowConfetti(true)
+    }
+  }, [todoItems])
+
+  useEffect(() => {
     getAllTodoItems()
   }, [])
 
   return (
     <Container as="main" maxWidth="container.lg">
+      {showConfetti && (
+        <Confetti
+          colors={['#ff6900', '#00d084', '#9b51e0']}
+          recycle={false}
+          onConfettiComplete={() => setShowConfetti(false)}
+        />
+      )}
       <TodoItemForm postTodoItem={postTodoItem} />
       <TodoItemsTable todoItems={todoItems} handleMarkAsCompleted={putTodoItemMarkAsCompleted} />
     </Container>
