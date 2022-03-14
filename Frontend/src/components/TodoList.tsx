@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Box, Text } from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
 import TodoItemsTable from './TodoItemsTable'
 import TodoItemForm from './TodoItemForm'
 import axios from 'axios'
