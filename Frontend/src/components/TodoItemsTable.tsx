@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Table, Thead, Tbody, Tr, Th, Td, Box, Text, HStack } from '@chakra-ui/react'
-import { TodoItem } from './TodoList'
 import TodoDescription from './TodoDescription'
 import TodoComplete from './TodoComplete'
 import useSWR from 'swr'
 import { TODO_LIST_API } from '../constants'
 import axios from 'axios'
 import Confetti from './Confetti'
+import { TodoItem } from '../types'
 
 interface TableComponentProps {
   data: TodoItem[]

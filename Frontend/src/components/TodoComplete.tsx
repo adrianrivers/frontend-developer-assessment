@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Text, ScaleFade, Box } from '@chakra-ui/react'
-import { TodoItem } from './TodoList'
+import { TodoItem } from '../types'
 import axios from 'axios'
 import { TODO_LIST_API } from '../constants'
 import { useSWRConfig } from 'swr'

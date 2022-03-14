@@ -1,7 +1,7 @@
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import React from 'react'
 import TodoItemsTable from '../TodoItemsTable'
-import { TodoItem } from '../TodoList'
+import { TodoItem } from '../../types'
 
 const TodoItemsMock: TodoItem[] = [
   {
