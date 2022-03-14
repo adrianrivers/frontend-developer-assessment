@@ -15,10 +15,9 @@ export interface TodoItem {
 export default function TodoList(): React.ReactElement {
   const [todoItems, setTodoItems] = useState<TodoItem[]>([])
 
-  const getAllTodoItems = async (): Promise<void> => {
+  const getAllTodoItems = async (): Promise<void | undefined> => {
     try {
       const { data } = await axios.get<TodoItem[]>(TODOLIST_API)
-
       if (data.length) return setTodoItems(data.reverse())
     } catch (error) {
       console.error(error)
@@ -28,7 +27,6 @@ export default function TodoList(): React.ReactElement {
   const postTodoItem = async (description: string | FormDataEntryValue): Promise<void> => {
     try {
       const { status } = await axios.post(TODOLIST_API, { description, isCompleted: false })
-
       if (status === 201) getAllTodoItems().then((data) => data)
     } catch (error) {
       console.error(error)
@@ -38,7 +36,6 @@ export default function TodoList(): React.ReactElement {
   const putTodoItemMarkAsCompleted = async (id: number, description: string) => {
     try {
       const { status } = await axios.put(`${TODOLIST_API}/${id}`, { description, isCompleted: true })
-
       if (status === 200) getAllTodoItems()
     } catch (error) {
       console.error(error)

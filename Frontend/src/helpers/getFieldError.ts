@@ -1,4 +1,4 @@
-export function getFieldError(value: string | undefined) {
+export function getFieldError(value: string | undefined): string | null {
   if (!value) return 'Field is required'
 
   const valueIsLongEnough = value.length >= 3

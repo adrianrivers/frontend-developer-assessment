@@ -7,7 +7,7 @@ interface TodoItemFormProps {
   postTodoItem: (description: string | FormDataEntryValue) => void
 }
 
-export default function TodoItemForm({ postTodoItem }: TodoItemFormProps) {
+export default function TodoItemForm({ postTodoItem }: TodoItemFormProps): React.ReactElement {
   const [wasSubmitted, setWasSubmitted] = useState<boolean>(false)
   const form = useRef<HTMLFormElement>(null)
 

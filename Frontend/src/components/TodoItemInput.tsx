@@ -9,7 +9,12 @@ interface TodoItemInputProps {
   wasSubmitted: boolean
 }
 
-export default function TodoItemInput({ label, name, placeholder, wasSubmitted }: TodoItemInputProps) {
+export default function TodoItemInput({
+  label,
+  name,
+  placeholder,
+  wasSubmitted,
+}: TodoItemInputProps): React.ReactElement {
   const [value, setValue] = useState<string>('')
   const [touched, setTouched] = useState<boolean>(false)
   const isError = (wasSubmitted || touched) && Boolean(getFieldError(value))

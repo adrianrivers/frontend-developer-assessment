@@ -8,7 +8,12 @@ interface TodoCompleteProps {
   description: string
 }
 
-export default function TodoComplete({ handleMarkAsCompleted, isCompleted, id, description }: TodoCompleteProps) {
+export default function TodoComplete({
+  handleMarkAsCompleted,
+  isCompleted,
+  id,
+  description,
+}: TodoCompleteProps): React.ReactElement {
   return !isCompleted ? (
     <Button
       background="brand.vividOrange"

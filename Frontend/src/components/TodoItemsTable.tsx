@@ -9,7 +9,7 @@ interface TodoItemsTableProps {
   handleMarkAsCompleted: (id: number, description: string) => void
 }
 
-export default function TodoItemsTable({ todoItems, handleMarkAsCompleted }: TodoItemsTableProps) {
+export default function TodoItemsTable({ todoItems, handleMarkAsCompleted }: TodoItemsTableProps): React.ReactElement {
   const table = () => {
     return (
       <Table variant="simple">

@@ -6,7 +6,7 @@ interface TodoDescriptionProps {
   isCompleted: boolean
 }
 
-export default function TodoDescription({ description, isCompleted }: TodoDescriptionProps) {
+export default function TodoDescription({ description, isCompleted }: TodoDescriptionProps): React.ReactElement {
   const strikethrough = keyframes`
     from { width: 0; }
     to { width: calc(100% + 1em); }

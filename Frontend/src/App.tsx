@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import TodoList from './components/TodoList'
 
-export default function App() {
+export default function App(): React.ReactElement {
   return (
     <Container maxWidth="container.xl">
       <Header />

@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { ChakraProvider } from '@chakra-ui/react'
-import theme from '../theme'
+import theme from './theme'
 
 const AllTheProviders: FC = ({ children }) => {
   return <ChakraProvider theme={theme}>{children}</ChakraProvider>
