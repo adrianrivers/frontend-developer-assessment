@@ -80,7 +80,6 @@ export default function TodoItemsTable(): React.ReactElement {
     }
   }, [data])
 
-  console.log('showConfetti', showConfetti)
   return (
     <>
       {showConfetti && <Confetti />}
